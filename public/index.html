@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Student Management System: student records dashboard">
+  <title>Student Management System | Students</title>
+  <link rel="stylesheet" href="styles.css?v=5">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">S</span><span class="brand-name">Student Management System</span></div>
+      <div class="workspace-label">Workspace</div>
+      <nav>
+        <a class="nav-item" href="#students" data-view="students"><span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>Students <span class="nav-count" id="navCount">0</span></a>
+        <a class="nav-item" href="#insights" data-view="insights"><span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6" rx="1"/><rect x="12" y="8" width="3" height="10" rx="1"/><rect x="17" y="5" width="3" height="13" rx="1"/></svg></span>Insights</a>
+        <a class="nav-item" href="#settings" data-view="settings"><span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>Settings</a>
+      </nav>
+      <div class="sidebar-footer"><div class="avatar">JD</div><div><strong>Jamie Davis</strong><small>Administrator</small></div></div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar"><div class="breadcrumb">Workspace <span>/</span> <b id="breadcrumbView">Students</b></div><div class="top-actions"><div class="top-avatar">JD</div></div></header>
+
+      <!-- Students view -->
+      <div class="view" id="view-students">
+        <section class="page-heading"><div><p class="eyebrow">Student directory</p><h1>Students</h1><p class="subtitle">Keep your student community moving forward.</p></div><button class="primary-button" id="addStudentButton"><span>＋</span> Add student</button></section>
+
+        <section class="stats-grid" aria-label="Student summary">
+          <div class="stat-card"><div class="stat-icon coral">♙</div><div><span>Total students</span><strong id="totalStudents">0</strong><small class="trend" id="totalNote">All records</small></div></div>
+          <div class="stat-card"><div class="stat-icon teal">✓</div><div><span>Active students</span><strong id="activeStudents">0</strong><small class="trend" id="activeNote">0% of total</small></div></div>
+          <div class="stat-card"><div class="stat-icon yellow">⌁</div><div><span>On leave</span><strong id="leaveStudents">0</strong><small class="trend neutral" id="leaveNote">0% of total</small></div></div>
+          <div class="stat-card"><div class="stat-icon blue">↗</div><div><span>Graduating soon</span><strong id="graduatingStudents">0</strong><small class="trend" id="graduatingNote">Year 4, not graduated</small></div></div>
+        </section>
+
+        <section class="records-section" aria-labelledby="allStudentsHeading">
+          <div class="section-heading">
+            <div><h2 id="allStudentsHeading">All students</h2><p id="recordSummary">Loading records...</p></div>
+            <div class="view-controls">
+              <div class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search students" aria-label="Search students"></div>
+              <select id="statusFilter" aria-label="Filter by status"><option value="All">All status</option><option value="Active">Active</option><option value="On leave">On leave</option><option value="Graduated">Graduated</option></select>
+              <select id="sortSelect" aria-label="Sort students"><option value="name">Name A–Z</option><option value="newest">Newest first</option><option value="year">Year</option><option value="course">Course</option></select>
+              <button class="filter-button" id="clearFilters" title="Clear search and filters" aria-label="Clear search and filters">↺</button>
+            </div>
+          </div>
+          <div class="table-wrap"><table><thead><tr><th>Student</th><th>Course</th><th>Year</th><th>Status</th><th>Contact</th><th><span class="sr-only">Actions</span></th></tr></thead><tbody id="studentsTable"></tbody></table>
+            <div class="empty-state" id="emptyState" hidden><div class="empty-icon">⌕</div><h3>No students found</h3><p>Try a different search or add a new student.</p></div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Insights view -->
+      <div class="view" id="view-insights" hidden>
+        <section class="page-heading"><div><p class="eyebrow">Overview</p><h1>Insights</h1><p class="subtitle">How your student community breaks down right now.</p></div></section>
+        <div class="insights-grid">
+          <section class="panel"><h2>By status</h2><p class="panel-note">Share of all students</p><div class="bar-list" id="statusBreakdown"></div></section>
+          <section class="panel"><h2>By year</h2><p class="panel-note">Students in each year</p><div class="bar-list" id="yearBreakdown"></div></section>
+          <section class="panel wide"><h2>By course</h2><p class="panel-note">Most popular courses first</p><div class="bar-list" id="courseBreakdown"></div></section>
+          <section class="panel wide"><h2>Recently added</h2><p class="panel-note">The five newest records</p><ul class="recent-list" id="recentList"></ul></section>
+        </div>
+      </div>
+
+      <!-- Settings view -->
+      <div class="view" id="view-settings" hidden>
+        <section class="page-heading"><div><p class="eyebrow">Workspace</p><h1>Settings</h1><p class="subtitle">Export your records or import them from a backup.</p></div></section>
+        <div class="settings-list">
+          <section class="panel setting-row"><div><h2>Export as CSV</h2><p class="panel-note">Opens in Excel, Google Sheets or Numbers.</p></div><button class="secondary-button" id="exportCsv">Download CSV</button></section>
+          <section class="panel setting-row"><div><h2>Export as JSON</h2><p class="panel-note">A full backup you can import later.</p></div><button class="secondary-button" id="exportJson">Download JSON</button></section>
+          <section class="panel setting-row"><div><h2>Import from JSON</h2><p class="panel-note">Adds students from a JSON backup. Emails that already exist are skipped.</p></div><label class="secondary-button file-button">Choose file<input type="file" id="importJson" accept="application/json,.json" hidden></label></section>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="close-button" id="closeModal" aria-label="Close dialog">×</button><p class="eyebrow">Student record</p><h2 id="modalTitle">Add student</h2><p class="modal-copy">Capture the details that help your team support this student.</p><form id="studentForm"><div class="form-grid"><label>Full name<input id="name" required placeholder="e.g. Maya Patel"></label><label>Email address<input id="email" type="email" required placeholder="name@northstar.edu"></label><label>Course<select id="courseSelect" required><option value="">Select course</option></select><input type="hidden" id="course"></label><label id="courseOtherField" hidden>Your course<input id="courseOther" placeholder="Type the course name" maxlength="80"></label><label>Year<select id="year" required><option value="">Select year</option><option>Year 1</option><option>Year 2</option><option>Year 3</option><option>Year 4</option></select></label><label>Status<select id="status"><option>Active</option><option>On leave</option><option>Graduated</option></select></label><label>Phone number<input id="phone" type="tel" placeholder="+1 555 000 0000"></label></div><p class="form-error" id="formError" role="alert"></p><div class="modal-actions"><button type="button" class="secondary-button" id="cancelModal">Cancel</button><button type="submit" class="primary-button" id="saveButton">Save student</button></div></form></section></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js?v=4"></script>
+</body>
+</html>
