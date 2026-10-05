@@ -4,8 +4,6 @@ A simple full-stack web application for managing student records. The system all
 
 The project is built with **Node.js, Express, lowdb, HTML, CSS and Vanilla JavaScript**, with no frontend framework or build step.
 
-> **Internship Project:** Auspify Technologies — Full Stack Development Internship Program
-
 ---
 
 ## 📌 Overview
@@ -133,6 +131,10 @@ On smaller screens:
 The application includes basic protection against Cross-Site Scripting (XSS) by escaping user-provided values before rendering them into HTML.
 
 ---
+<img width="1515" height="690" alt="image" src="https://github.com/user-attachments/assets/1e0dedaf-6c86-4fd9-8a44-649d8ffd5e3f" />
+<img width="688" height="491" alt="image" src="https://github.com/user-attachments/assets/b960d96c-278b-4303-8316-34038becf574" />
+<img width="1528" height="696" alt="image" src="https://github.com/user-attachments/assets/b14d748c-146c-4a59-b75f-167db69b87de" />
+
 
 # 🛠️ Tech Stack
 
@@ -1054,9 +1056,6 @@ The project was completed as a practical full-stack development exercise to demo
 
 GitHub:
 https://github.com/SamniHasnath
-
-LinkedIn:
-Add your LinkedIn profile here.
 
 ---
 
