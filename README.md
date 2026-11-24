@@ -652,32 +652,6 @@ Navigate to Settings to:
 
 ---
 
-## 🧪 Testing Checklist
-
-Automated tests have not yet been implemented. The following checklist can be used for manual testing.
-
-### Student Management
-
-- [ ] Add a student.
-- [ ] View a student.
-- [ ] Edit a student.
-- [ ] Delete a student.
-- [ ] Confirm deletion.
-
-### Validation
-
-- [ ] Submit without a name.
-- [ ] Submit without an email.
-- [ ] Submit without a course.
-- [ ] Submit without an academic year.
-- [ ] Enter an invalid email.
-- [ ] Enter a duplicate email.
-- [ ] Enter an invalid status.
-
-
-
----
-
 ## 🔐 Authentication & Security Limitations
 
 Authentication and authorization have not been implemented.
