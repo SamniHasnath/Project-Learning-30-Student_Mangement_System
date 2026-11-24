@@ -1,4 +1,4 @@
-# 🎓 Student Management System
+# Student Management System
 
 <p align="center">
   <strong>A Simple Full-Stack Student Management Dashboard</strong>
@@ -674,32 +674,7 @@ Automated tests have not yet been implemented. The following checklist can be us
 - [ ] Enter a duplicate email.
 - [ ] Enter an invalid status.
 
-### Search, Filter & Sort
 
-- [ ] Search by name.
-- [ ] Search by email.
-- [ ] Search by course.
-- [ ] Search by phone.
-- [ ] Filter by status.
-- [ ] Sort by name.
-- [ ] Sort by newest.
-- [ ] Sort by academic year.
-- [ ] Sort by course.
-- [ ] Reset filters.
-
-### Import & Export
-
-- [ ] Export CSV.
-- [ ] Export JSON.
-- [ ] Import JSON.
-- [ ] Verify duplicate emails are skipped.
-
-### Responsive UI
-
-- [ ] Test desktop layout.
-- [ ] Test tablet layout.
-- [ ] Test mobile layout.
-- [ ] Verify responsive navigation.
 
 ---
 
