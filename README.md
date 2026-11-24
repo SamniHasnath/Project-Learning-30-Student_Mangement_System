@@ -1,230 +1,257 @@
-# Student Management System
+# 🎓 Student Management System
 
-A simple full-stack web application for managing student records. The system allows users to **add, view, edit, search, filter, sort and delete students**, view student insights, and import or export student data.
-
-The project is built with **Node.js, Express, lowdb, HTML, CSS and Vanilla JavaScript**, with no frontend framework or build step.
+<p align="center">
+  <strong>A Simple Full-Stack Student Management Dashboard</strong>
+  <br/>
+  Manage student records, explore insights, and organize academic data through a responsive web application.
+</p>
 
 ---
 
 ## 📌 Overview
 
-The **Student Management System** is a single-page dashboard designed to provide a simple alternative to managing student information through spreadsheets or paper records.
+The **Student Management System** is a full-stack web application designed to simplify student record management through an interactive dashboard.
 
-Each student record contains:
+It allows users to manage student information, search and filter records, view dashboard statistics, explore insights, and import or export data.
 
-* Name
-* Email
-* Course
-* Academic year
-* Status
-* Phone number
-* Creation and update timestamps
+Built using **HTML5, CSS3, Vanilla JavaScript, Node.js, Express.js and lowdb**, this project demonstrates the fundamentals of full-stack web development without requiring a frontend framework or a traditional database server.
 
-The application demonstrates a complete **frontend → REST API → backend → data storage** workflow.
+### ✨ Key Highlights
 
-### What the system can do
-
-* Create new student records
-* View all students
-* Edit existing students
-* Delete students
-* Search students
-* Filter students by status
-* Sort students
-* Display summary statistics
-* Display course, year and status insights
-* Export data as CSV or JSON
-* Import student data from JSON backups
-* Work on desktop and mobile screens
-
-> **Important:** This is a learning/internship project. Authentication and authorization are not currently implemented, so it is intended for local or trusted environments.
+- Full CRUD functionality for student records
+- REST API built with Express.js
+- JSON-based persistent storage using lowdb
+- Search, filtering and sorting
+- Dashboard statistics and insights
+- CSV and JSON export
+- JSON data import
+- Responsive dashboard design
+- Backend validation and basic XSS protection
 
 ---
 
-## ✨ Features
+## 📸 Screenshots
+
+### Dashboard & Student Management
+
+<img width="1515" height="690" alt="Student Management Dashboard" src="https://github.com/user-attachments/assets/1e0dedaf-6c86-4fd9-8a44-649d8ffd5e3f" />
+
+### Student Management Interface
+
+<img width="688" height="491" alt="Student Management Interface" src="https://github.com/user-attachments/assets/b960d96c-278b-4303-8316-34038becf574" />
+
+### Dashboard Insights
+
+<img width="1528" height="696" alt="Student Management Insights" src="https://github.com/user-attachments/assets/b14d748c-146c-4a59-b75f-167db69b87de" />
+
+---
+
+## 🚀 Features
 
 ### 👨‍🎓 Student Management
 
-* View all student records in a dashboard
-* Add new students
-* Edit existing students
-* Delete students with confirmation
-* Display student initials as avatars
-* Display course, year, status and contact information
+- View all student records.
+- Add new students.
+- Edit existing student information.
+- Delete students with confirmation.
+- Display student initials as avatars.
+- View contact, course, academic year and status information.
 
-### 🔎 Search, Filter & Sort
+### 🔍 Search, Filter & Sort
 
-Students can be searched by:
+<details>
+<summary><strong>Search functionality</strong></summary>
 
-* Name
-* Email
-* Course
-* Phone
+Search students using:
 
-Available filters:
+- Name
+- Email
+- Course
+- Phone number
 
-* Active
-* On leave
-* Graduated
+</details>
 
-Available sorting options:
+<details>
+<summary><strong>Filtering</strong></summary>
 
-* Name
-* Newest
-* Year
-* Course
+Filter student records by:
 
-A reset option clears the current search, filter and sorting options.
+- Active
+- On leave
+- Graduated
 
-### ✅ Validation
+</details>
 
-The backend validates incoming student data.
+<details>
+<summary><strong>Sorting</strong></summary>
 
-* Name is required
-* Email is required
-* Course is required
-* Year is required
-* Email format is validated
-* Email addresses must be unique
-* Status must be one of the allowed values
-* Optional phone number is trimmed
-* Input values are cleaned before being stored
+Sort student records by:
 
-### 📊 Dashboard Summary
+- Name
+- Newest
+- Academic year
+- Course
 
-The dashboard displays:
+</details>
 
-* Total students
-* Active students
-* Students on leave
-* Year 4 students who have not graduated
+### 📊 Dashboard Statistics
 
-### 📈 Insights
+The dashboard displays key student statistics:
 
-The Insights page provides:
+- Total students
+- Active students
+- Students on leave
+- Year 4 students who have not graduated
 
-* Students by status
-* Students by academic year
-* Students by course
-* Five newest students
+### 📈 Student Insights
 
-### ⚙️ Settings
+The Insights page provides an overview of student data:
 
-The Settings page supports:
+- Students by status
+- Students by academic year
+- Students by course
+- Five newest student records
 
-* Export students as CSV
-* Export students as JSON
-* Import students from a JSON backup
-* Skip records with existing email addresses
+### ⚙️ Data Import & Export
 
-### 📱 Responsive Design
+- Export student records as CSV.
+- Export student records as JSON.
+- Import student data using JSON backups.
+- Skip records with existing email addresses during import.
 
-The interface works on different screen sizes.
+### 📱 Responsive UI
 
-On smaller screens:
+- Responsive dashboard layout
+- Adaptive navigation for smaller screens
+- Responsive tables and dashboard components
+- Desktop and mobile-friendly layouts
 
-* The sidebar changes into a top navigation/tab layout
-* Tables and dashboard elements adapt to the available width
+### ✅ Backend Validation
+
+The backend validates student data before saving it.
+
+- Required field validation
+- Email format validation
+- Duplicate email detection
+- Allowed status validation
+- Input trimming and normalization
+- Automatic ID generation
+- Automatic timestamps
 
 ### 🔐 Basic Security
 
-The application includes basic protection against Cross-Site Scripting (XSS) by escaping user-provided values before rendering them into HTML.
+- User-provided values are escaped before rendering to reduce XSS risks.
+- Input validation is performed on the backend.
 
----
-<img width="1515" height="690" alt="image" src="https://github.com/user-attachments/assets/1e0dedaf-6c86-4fd9-8a44-649d8ffd5e3f" />
-<img width="688" height="491" alt="image" src="https://github.com/user-attachments/assets/b960d96c-278b-4303-8316-34038becf574" />
-<img width="1528" height="696" alt="image" src="https://github.com/user-attachments/assets/b14d748c-146c-4a59-b75f-167db69b87de" />
-
-
-# 🛠️ Tech Stack
-
-## Frontend
-
-| Technology         | Purpose                             |
-| ------------------ | ----------------------------------- |
-| HTML5              | Page structure                      |
-| CSS3               | Styling and responsive layout       |
-| Vanilla JavaScript | Frontend logic and DOM manipulation |
-| Fetch API          | Communication with REST API         |
-
-## Backend
-
-| Technology | Purpose                        |
-| ---------- | ------------------------------ |
-| Node.js    | JavaScript runtime             |
-| Express.js | Web server and REST API        |
-| lowdb      | Lightweight JSON database      |
-| FileSync   | Synchronous file-based storage |
-
-## Development Tools
-
-| Tool                            | Purpose                                     |
-| ------------------------------- | ------------------------------------------- |
-| npm                             | Dependency management                       |
-| Git                             | Version control                             |
-| GitHub                          | Source-code hosting                         |
-| Node.js `--watch`               | Automatic server restart during development |
-| Postman / Thunder Client / cURL | API testing                                 |
+> Authentication and authorization are not currently implemented. This project is intended for learning, development and trusted demonstration environments.
 
 ---
 
-# 🏗️ System Architecture
+## 🛠️ Tech Stack
 
-The application follows a simple full-stack architecture:
+### Frontend
+
+| Technology | Purpose |
+|---|---|
+| HTML5 | Application structure |
+| CSS3 | Styling and responsive design |
+| Vanilla JavaScript | UI logic and DOM manipulation |
+| Fetch API | Communicating with the backend REST API |
+
+### Backend
+
+| Technology | Purpose |
+|---|---|
+| Node.js | JavaScript runtime |
+| Express.js | Backend server and REST API |
+| lowdb | Lightweight JSON database |
+| FileSync | Synchronous file-based storage |
+
+### Development Tools
+
+| Tool | Purpose |
+|---|---|
+| npm | Dependency management |
+| Git | Version control |
+| GitHub | Repository hosting |
+| Node.js `--watch` | Automatic server restart |
+| Postman | API testing |
+| Thunder Client | API testing |
+| cURL | API testing |
+
+---
+
+## 🏗️ System Architecture
+
+The application follows a simple client-server architecture.
 
 ```text
-┌─────────────────────────────┐
-│          Browser            │
-│   HTML + CSS + JavaScript   │
-└──────────────┬──────────────┘
-               │
-               │ fetch()
-               │ JSON requests
-               ▼
-┌─────────────────────────────┐
-│       Express Server        │
-│                             │
-│  REST API /api/students     │
-│  Validation                 │
-│  Business Logic             │
-└──────────────┬──────────────┘
-               │
-               │ read / write
-               ▼
-┌─────────────────────────────┐
-│            lowdb            │
-│                             │
-│   data/students.json        │
-└─────────────────────────────┘
+┌─────────────────────────────────────┐
+│              FRONTEND              │
+│                                     │
+│         HTML + CSS + JS             │
+│                                     │
+│  Dashboard / Search / CRUD / UI     │
+└──────────────────┬──────────────────┘
+                   │
+                   │ Fetch API
+                   │ JSON Requests
+                   ▼
+┌─────────────────────────────────────┐
+│              BACKEND               │
+│                                     │
+│             Node.js                 │
+│             Express                 │
+│                                     │
+│  REST API / Validation / Logic      │
+└──────────────────┬──────────────────┘
+                   │
+                   │ Read / Write
+                   ▼
+┌─────────────────────────────────────┐
+│              STORAGE                │
+│                                     │
+│               lowdb                 │
+│                                     │
+│         students.json               │
+└─────────────────────────────────────┘
 ```
 
 ### Request Flow
 
 ```text
-User Action
-     ↓
-Frontend app.js
-     ↓
-fetch() API request
-     ↓
-Express server
-     ↓
-Validate request
-     ↓
-lowdb
-     ↓
-students.json
-     ↓
-JSON response
-     ↓
-Frontend updates UI
+User Interaction
+      │
+      ▼
+Frontend JavaScript
+      │
+      ▼
+Fetch API Request
+      │
+      ▼
+Express REST API
+      │
+      ▼
+Backend Validation
+      │
+      ▼
+Business Logic
+      │
+      ▼
+lowdb / JSON Storage
+      │
+      ▼
+API Response
+      │
+      ▼
+Frontend UI Update
 ```
 
-Search, filtering, sorting, statistics and navigation are performed in the browser after the student data has been loaded.
+Search, filtering, sorting, dashboard statistics and navigation are handled in the browser after the student data has been loaded.
 
 ---
 
-# 📁 Project Structure
+## 📁 Project Structure
 
 ```text
 Student-Management-System/
@@ -249,43 +276,43 @@ Student-Management-System/
 
 ### File Responsibilities
 
-| File / Folder        | Purpose                                                        |
-| -------------------- | -------------------------------------------------------------- |
-| `server.js`          | Express server, validation, API routes and lowdb setup         |
-| `package.json`       | Project dependencies and npm scripts                           |
-| `package-lock.json`  | Locks dependency versions                                      |
-| `public/index.html`  | Frontend page structure                                        |
-| `public/styles.css`  | Application styling and responsive design                      |
-| `public/app.js`      | API calls, UI rendering, search, filtering, sorting and events |
-| `data/students.json` | Local student data storage                                     |
-| `.gitignore`         | Prevents unnecessary/private files from being committed        |
-| `README.md`          | Project documentation                                          |
+| File | Responsibility |
+|---|---|
+| `server.js` | Express server, API routes, validation and lowdb setup |
+| `package.json` | Dependencies and npm scripts |
+| `package-lock.json` | Locks dependency versions |
+| `public/index.html` | Frontend structure |
+| `public/styles.css` | Styling and responsive layout |
+| `public/app.js` | API calls, UI rendering, events, search, filtering and sorting |
+| `data/students.json` | Local student data storage |
+| `.gitignore` | Excludes unnecessary or private files |
+| `README.md` | Project documentation |
 
-> The `data/` directory is git-ignored so local student data is not committed to GitHub.
+> The `data/` directory is excluded from Git to prevent local student data from being committed.
 
 ---
 
-# 🔌 REST API
+## 🔌 REST API
 
-Base URL:
+The application provides a REST API for managing student records.
+
+### Base URL
 
 ```text
 http://localhost:4000
 ```
 
-All API requests and responses use JSON.
+### API Endpoints
 
-## Endpoints
+| HTTP Method | Endpoint | Description | Status |
+|---|---|---|---|
+| `GET` | `/api/students` | Retrieve all students | `200` |
+| `GET` | `/api/students/:id` | Retrieve a student by ID | `200` |
+| `POST` | `/api/students` | Create a new student | `201` |
+| `PUT` | `/api/students/:id` | Update a student | `200` |
+| `DELETE` | `/api/students/:id` | Delete a student | `204` |
 
-| Method   | Endpoint            | Description      | Success |
-| -------- | ------------------- | ---------------- | ------- |
-| `GET`    | `/api/students`     | Get all students | `200`   |
-| `GET`    | `/api/students/:id` | Get one student  | `200`   |
-| `POST`   | `/api/students`     | Create a student | `201`   |
-| `PUT`    | `/api/students/:id` | Update a student | `200`   |
-| `DELETE` | `/api/students/:id` | Delete a student | `204`   |
-
-### GET All Students
+### 1. Retrieve All Students
 
 ```http
 GET /api/students
@@ -297,20 +324,20 @@ Optional search:
 GET /api/students?search=maya
 ```
 
-### GET One Student
+### 2. Retrieve a Student
 
 ```http
 GET /api/students/1
 ```
 
-### Create Student
+### 3. Create a Student
 
 ```http
 POST /api/students
 Content-Type: application/json
 ```
 
-Example:
+Request body:
 
 ```json
 {
@@ -323,14 +350,14 @@ Example:
 }
 ```
 
-### Update Student
+### 4. Update a Student
 
 ```http
 PUT /api/students/1
 Content-Type: application/json
 ```
 
-### Delete Student
+### 5. Delete a Student
 
 ```http
 DELETE /api/students/1
@@ -338,21 +365,21 @@ DELETE /api/students/1
 
 ---
 
-# 📋 Student Data Model
+## 📋 Student Data Model
 
-Each student contains:
+Each student record contains the following fields:
 
-| Field       | Type   |                Required | Description                   |
-| ----------- | ------ | ----------------------: | ----------------------------- |
-| `id`        | Number | Automatically generated | Unique student ID             |
-| `name`      | String |                     Yes | Student's full name           |
-| `email`     | String |                     Yes | Unique email address          |
-| `course`    | String |                     Yes | Student's course              |
-| `year`      | String |                     Yes | Academic year                 |
-| `status`    | String |                      No | Active, On leave or Graduated |
-| `phone`     | String |                      No | Student phone number          |
-| `createdAt` | String | Automatically generated | ISO timestamp                 |
-| `updatedAt` | String | Automatically generated | ISO timestamp                 |
+| Field | Type | Required | Description |
+|---|---|---|---|
+| `id` | Number | Automatically generated | Unique student ID |
+| `name` | String | Yes | Student's full name |
+| `email` | String | Yes | Unique email address |
+| `course` | String | Yes | Student's course |
+| `year` | String | Yes | Academic year |
+| `status` | String | No | Student status |
+| `phone` | String | No | Contact number |
+| `createdAt` | String | Automatically generated | Creation timestamp |
+| `updatedAt` | String | Automatically generated | Last update timestamp |
 
 ### Allowed Status Values
 
@@ -362,71 +389,29 @@ On leave
 Graduated
 ```
 
-If no status is supplied, the server uses:
+The default status is `Active` when no status is provided.
 
-```text
-Active
-```
+The backend also:
 
-The server also:
-
-* Trims string values
-* Converts email addresses to lowercase
-* Generates IDs
-* Generates timestamps
-* Checks duplicate emails
+- Trims string values.
+- Converts email addresses to lowercase.
+- Generates unique IDs.
+- Generates timestamps.
+- Checks for duplicate email addresses.
 
 ---
 
-# ❌ API Error Responses
+## 💾 Data Storage
 
-Errors are returned in this format:
+This application uses **lowdb**, a lightweight JSON-based database, to persist student records.
 
-```json
-{
-  "error": "Error message"
-}
-```
-
-| HTTP Status | Meaning                        |
-| ----------- | ------------------------------ |
-| `400`       | Invalid or missing input       |
-| `404`       | Student or API route not found |
-| `409`       | Email already exists           |
-| `500`       | Server/data storage error      |
-
----
-
-# 🧪 API Example
-
-Using cURL:
-
-```bash
-curl -X POST http://localhost:4000/api/students \
-  -H "Content-Type: application/json" \
-  -d '{"name":"Test User","email":"test@example.com","course":"Mathematics","year":"Year 1"}'
-```
-
-The same API can be tested using:
-
-* Postman
-* Thunder Client
-* cURL
-* Browser developer tools
-
----
-
-# 💾 Database / Data Storage
-
-This project uses **lowdb** instead of a traditional database server.
-
-Student data is stored in:
+### Storage Location
 
 ```text
 data/students.json
 ```
 
-Example:
+### Example Data
 
 ```json
 {
@@ -448,643 +433,550 @@ Example:
 
 ### Why lowdb?
 
-lowdb is useful for this project because it:
+- Lightweight and easy to integrate.
+- No separate database server required.
+- Stores data in a JSON file.
+- Suitable for small projects and learning purposes.
+- Easy to inspect and manage locally.
 
-* Is lightweight
-* Requires no database server
-* Stores data in a JSON file
-* Is easy to understand for beginners
-* Is suitable for a small learning project
-
-> For a production application with many users and large amounts of data, a proper database such as PostgreSQL, MySQL or MongoDB would be more appropriate.
+> For larger applications or production environments, a database such as PostgreSQL, MySQL or MongoDB would be more appropriate.
 
 ---
 
-# 🌱 Initial Seed Data
+## 🌱 Seed Data
 
 When the application starts for the first time:
 
-1. The `data/` directory is created.
-2. `students.json` is created.
+1. The data directory is created.
+2. `students.json` is initialized.
 3. Three sample students are inserted.
 
-To start with a fresh dataset:
+### Reset the Dataset
 
 1. Stop the server.
 2. Delete `data/students.json`.
-3. Start the server again.
+3. Start the application again.
 
 The sample records will be recreated.
 
-> Stop the server before manually editing `students.json`. The application reads and saves the file through lowdb.
+> Stop the server before manually editing `students.json`.
 
 ---
 
-# 🔐 Authentication & Authorization
+## 🚀 Getting Started
 
-Authentication and authorization are **not currently implemented**.
+Follow these steps to run the project locally.
 
-There is no:
+### Prerequisites
 
-* Login
-* Registration
-* Password system
-* Session
-* JWT
-* Role-based access control
-* User management
+Install the following:
 
-The dashboard may display an administrator name as placeholder UI content, but it is **not connected to an actual user account**.
+- [Node.js](https://nodejs.org/) — version 18.11 or newer
+- npm
+- Git
 
-Therefore, anyone who can access the server can potentially read, create, update or delete student records.
-
-For this reason, the project is intended for:
-
-* Local development
-* Learning
-* Demonstrations
-* Trusted environments
-
----
-
-# 🚀 Installation & Setup
-
-## Prerequisites
-
-Install:
-
-* Node.js **18.11 or newer**
-* npm
-* Git
-
-Node.js is required for the development script because the project uses:
-
-```bash
-node --watch server.js
-```
-
----
-
-## 1. Clone the Repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/SamniHasnath/Student-Mangemnt-System.git
 ```
 
----
-
-## 2. Open the Project
+### 2. Navigate to the Project
 
 ```bash
 cd Student-Mangemnt-System
 ```
 
----
-
-## 3. Install Dependencies
+### 3. Install Dependencies
 
 ```bash
 npm install
 ```
 
----
-
-## 4. Start Development Server
+### 4. Start the Development Server
 
 ```bash
 npm run dev
 ```
 
-The server will start on:
+### 5. Open the Application
+
+Visit:
 
 ```text
 http://localhost:4000
 ```
 
----
-
-## 5. Open the Application
-
-Open:
-
-```text
-http://localhost:4000
-```
-
-> **Important:** Do not open `public/index.html` directly from your file system. The frontend needs the Express server to communicate with the REST API.
-
----
-
-# 📜 Available Scripts
-
-| Command       | Description                          |
-| ------------- | ------------------------------------ |
-| `npm install` | Installs project dependencies        |
-| `npm run dev` | Starts server with automatic restart |
-| `npm start`   | Starts server normally               |
-
-### Development
-
-```bash
-npm run dev
-```
-
-### Normal Start
+<details>
+<summary><strong>Alternative: Start without the development watcher</strong></summary>
 
 ```bash
 npm start
 ```
 
+</details>
+
+> Do not open `public/index.html` directly. The frontend requires the Express server to communicate with the API.
+
 ---
 
-# 🌐 Environment Variables
+## 📜 Available Scripts
 
-The application uses one optional environment variable:
+| Command | Description |
+|---|---|
+| `npm install` | Install project dependencies |
+| `npm run dev` | Start server with automatic restart |
+| `npm start` | Start server normally |
 
-```env
-PORT=4000
-```
+---
 
-| Variable | Required | Default | Description                     |
-| -------- | -------- | ------- | ------------------------------- |
-| `PORT`   | No       | `4000`  | Port used by the Express server |
+## 🌐 Environment Configuration
 
-### Git Bash / macOS / Linux
+The application supports an optional environment variable.
+
+| Variable | Default | Description |
+|---|---|---|
+| `PORT` | `4000` | Port used by the Express server |
+
+### Run on a Different Port
+
+**Git Bash / macOS / Linux**
 
 ```bash
 PORT=5000 npm start
 ```
 
-### Windows PowerShell
+**Windows PowerShell**
 
 ```powershell
 $env:PORT=5000; npm start
 ```
 
-The application does not currently use `dotenv`.
+The project does not currently use `dotenv`.
 
 If the selected port is already occupied, the server attempts to use the next available port.
 
 ---
 
-# 🖥️ How to Use
+## 🧪 API Testing
 
-## 1. View Students
+The REST API can be tested using:
 
-Open the **Students** page to see:
+- Postman
+- Thunder Client
+- cURL
+- Browser Developer Tools
 
-* Summary cards
-* Search
-* Filters
-* Sorting
-* Student table
+### Example cURL Request
 
-## 2. Add Student
-
-Click:
-
-```text
-+ Add Student
+```bash
+curl -X POST http://localhost:4000/api/students \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Test User","email":"test@example.com","course":"Mathematics","year":"Year 1"}'
 ```
 
-Enter:
+### Error Response
 
-* Name
-* Email
-* Course
-* Year
-* Status
-* Phone
-
-Then click:
-
-```text
-Save Student
+```json
+{
+  "error": "Error message"
+}
 ```
 
-## 3. Edit Student
+### HTTP Status Codes
 
-Select the edit button for an existing record.
+| Status Code | Description |
+|---|---|
+| `400` | Invalid or missing input |
+| `404` | Student or API route not found |
+| `409` | Email already exists |
+| `500` | Server or data storage error |
 
-Update the information and save the changes.
+---
 
-## 4. Delete Student
+## 🖥️ How to Use
 
-Select the delete button.
+### 1. View Students
 
-A confirmation prompt appears before the record is removed.
+Open the Students page to view:
 
-## 5. Search Students
+- Student records
+- Summary statistics
+- Search functionality
+- Filters
+- Sorting options
 
-Use the search field to search by:
+### 2. Add a Student
 
-* Name
-* Email
-* Course
-* Phone
+1. Click **Add Student**.
+2. Enter the student's information.
+3. Complete the required fields.
+4. Click **Save Student**.
 
-## 6. Filter Students
+### 3. Edit a Student
+
+1. Select the edit action on a student record.
+2. Update the required information.
+3. Save your changes.
+
+### 4. Delete a Student
+
+1. Select the delete action.
+2. Confirm the deletion.
+3. The student record will be removed.
+
+### 5. Search Students
+
+Use the search field to find students by name, email, course or phone number.
+
+### 6. Filter Students
 
 Use the status filter to display:
 
-```text
-All
-Active
-On leave
-Graduated
-```
+- All
+- Active
+- On leave
+- Graduated
 
-## 7. View Insights
+### 7. View Insights
 
-Open:
+Navigate to the Insights page to explore student statistics by course, academic year and status.
 
-```text
-Insights
-```
+### 8. Import & Export
 
-to see:
+Navigate to Settings to:
 
-* Status breakdown
-* Year breakdown
-* Course breakdown
-* Recently added students
-
-## 8. Import / Export
-
-Open:
-
-```text
-Settings
-```
-
-Available options:
-
-* Download CSV
-* Download JSON
-* Import JSON backup
+- Download student data as CSV.
+- Download student data as JSON.
+- Import a JSON backup.
 
 ---
 
-# 📸 Screenshots
+## 🧪 Testing Checklist
 
-Screenshots can be added to the repository using:
-
-```text
-screenshots/
-├── students.png
-├── student-form.png
-├── insights.png
-├── settings.png
-└── mobile.png
-```
-
-Then include them in this README:
-
-```markdown
-![Students Dashboard](screenshots/students.png)
-
-![Add / Edit Student Form](screenshots/student-form.png)
-
-![Insights](screenshots/insights.png)
-
-![Settings](screenshots/settings.png)
-
-![Mobile View](screenshots/mobile.png)
-```
-
----
-
-# 🧪 Testing
-
-There are currently **no automated tests** in the project.
-
-Testing can be performed manually through the UI and REST API.
-
-## Manual Testing Checklist
+Automated tests have not yet been implemented. The following checklist can be used for manual testing.
 
 ### Student Management
 
-* [ ] Add a student with valid information
-* [ ] View the new student
-* [ ] Edit the student
-* [ ] Delete the student
-* [ ] Confirm deletion works
+- [ ] Add a student.
+- [ ] View a student.
+- [ ] Edit a student.
+- [ ] Delete a student.
+- [ ] Confirm deletion.
 
 ### Validation
 
-* [ ] Submit without a name
-* [ ] Submit without an email
-* [ ] Submit without a course
-* [ ] Submit without a year
-* [ ] Enter an invalid email
-* [ ] Enter an existing email
-* [ ] Enter an invalid status
+- [ ] Submit without a name.
+- [ ] Submit without an email.
+- [ ] Submit without a course.
+- [ ] Submit without an academic year.
+- [ ] Enter an invalid email.
+- [ ] Enter a duplicate email.
+- [ ] Enter an invalid status.
 
-### Search / Filter / Sort
+### Search, Filter & Sort
 
-* [ ] Search by name
-* [ ] Search by email
-* [ ] Search by course
-* [ ] Search by phone
-* [ ] Filter by status
-* [ ] Sort by name
-* [ ] Sort by newest
-* [ ] Sort by year
-* [ ] Sort by course
-* [ ] Reset filters
+- [ ] Search by name.
+- [ ] Search by email.
+- [ ] Search by course.
+- [ ] Search by phone.
+- [ ] Filter by status.
+- [ ] Sort by name.
+- [ ] Sort by newest.
+- [ ] Sort by academic year.
+- [ ] Sort by course.
+- [ ] Reset filters.
 
-### Import / Export
+### Import & Export
 
-* [ ] Export CSV
-* [ ] Export JSON
-* [ ] Import JSON
-* [ ] Verify duplicate emails are skipped
+- [ ] Export CSV.
+- [ ] Export JSON.
+- [ ] Import JSON.
+- [ ] Verify duplicate emails are skipped.
 
-### Responsive Design
+### Responsive UI
 
-* [ ] Test desktop layout
-* [ ] Test tablet layout
-* [ ] Test mobile layout
-* [ ] Verify navigation changes on small screens
-
----
-
-# 🐛 Troubleshooting
-
-| Problem                          | Solution                                                                                        |
-| -------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `EADDRINUSE`                     | Another application is using the port. Set another `PORT`.                                      |
-| `Could not load records`         | Make sure the Express server is running.                                                        |
-| Buttons do nothing               | Open the application through `http://localhost:4000`, not `index.html`.                         |
-| Changes are not visible          | Try `Ctrl + F5` to refresh the browser cache.                                                   |
-| `node --watch` is not recognised | Update Node.js to 18.11+ or use `npm start`.                                                    |
-| Student data disappeared         | Check that `data/students.json` still exists and the application has permission to write to it. |
+- [ ] Test desktop layout.
+- [ ] Test tablet layout.
+- [ ] Test mobile layout.
+- [ ] Verify responsive navigation.
 
 ---
 
-# 🚀 Deployment
+## 🔐 Authentication & Security Limitations
 
-The application is currently **not deployed** and does not have a live demo URL.
+Authentication and authorization have not been implemented.
 
-Because the application stores data in:
+The application currently does not include:
 
-```text
-data/students.json
-```
+- Login or registration
+- Password authentication
+- JWT authentication
+- Session management
+- Role-based access control
+- User account management
 
-the deployment environment must provide persistent file storage.
+The administrator name displayed in the dashboard is placeholder UI content and is not connected to a real account.
 
-Suitable deployment options include:
+Therefore, anyone with access to the server may potentially access, modify or delete student records.
 
-* VPS
-* Virtual machine
-* AWS EC2
-* Other Node.js hosts with persistent disk storage
+This application is intended for:
 
-Serverless or ephemeral container platforms may not be suitable for the current architecture because local files can be lost when the application restarts or the instance is replaced.
-
-For a production deployment, the recommended approach would be to replace lowdb with a persistent database such as:
-
-* PostgreSQL
-* MySQL
-* MongoDB
-* SQLite
-
-and add proper authentication and authorization.
+- Local development
+- Learning
+- Demonstrations
+- Trusted environments
 
 ---
 
-# 🔮 Future Improvements
+## 🐛 Troubleshooting
 
-The project can be extended with:
+| Problem | Solution |
+|---|---|
+| `EADDRINUSE` | Another application is using the port. Set a different `PORT`. |
+| Could not load records | Make sure the Express server is running. |
+| Buttons do nothing | Open the application through `http://localhost:4000`, not directly through `index.html`. |
+| Changes are not visible | Refresh the browser using `Ctrl + F5`. |
+| `node --watch` is not recognized | Update Node.js to 18.11+ or use `npm start`. |
+| Student data disappeared | Check whether `data/students.json` exists and the application has write permissions. |
 
-### Authentication
+---
 
-* Login and registration
-* Password hashing
-* JWT authentication
-* Session management
-* Role-based access control
+## 🚀 Deployment Considerations
+
+The application is currently not deployed and does not have a live demo URL.
+
+Because student records are stored in `data/students.json`, the deployment environment must support persistent file storage.
+
+Potential deployment environments include:
+
+- Virtual machines
+- VPS hosting
+- AWS EC2
+- Node.js hosting platforms with persistent storage
+
+Ephemeral or serverless environments may not be suitable without additional storage configuration.
+
+### Recommended Production Improvements
+
+- Replace lowdb with a production database.
+- Implement authentication and authorization.
+- Use secure HTTPS connections.
+- Add automated tests.
+- Add API documentation.
+- Implement logging and monitoring.
+
+---
+
+## 🔮 Future Improvements
+
+### Authentication & Authorization
+
+- User login and registration
+- Password hashing
+- JWT or session authentication
+- Role-based access control
 
 ### Database
 
-Move from lowdb to:
+- PostgreSQL integration
+- MySQL integration
+- MongoDB integration
+- SQLite integration
 
-* PostgreSQL
-* MySQL
-* MongoDB
-* SQLite
+### API
+
+- Pagination
+- Advanced filtering
+- Server-side search
+- Bulk import API
+- Improved validation
+- API documentation
+
+### Import & Export
+
+- CSV import
+- Excel import/export
+- Bulk student upload
 
 ### Testing
 
-Add automated tests using:
-
-* Jest
-* Supertest
-* Integration testing
-* Frontend testing
-
-### API Improvements
-
-* Pagination
-* Advanced filtering
-* Server-side search
-* Bulk import endpoint
-* Better validation
-* API documentation
-
-### Import / Export
-
-* CSV import
-* Excel export/import
-* Bulk student upload
+- Jest
+- Supertest
+- Integration testing
+- Frontend testing
 
 ### DevOps
 
-* Docker
-* GitHub Actions
-* CI/CD pipeline
-* Production deployment
-* HTTPS
+- Docker
+- GitHub Actions
+- CI/CD
+- Deployment
+- HTTPS
 
-### UI Improvements
+### UI & UX
 
-* Dark mode
-* Improved accessibility
-* Advanced charts
-* Better mobile experience
-* Pagination
-* Loading states
+- Dark mode
+- Accessibility improvements
+- Advanced charts
+- Improved mobile experience
+- Pagination
+- Loading states
 
 ---
 
-# 🎓 Learning Outcomes
+## 🎓 Learning Outcomes
 
-This project helped develop practical understanding of:
+This project provided practical experience in:
 
 ### Frontend Development
 
-* HTML5
-* CSS3
-* Responsive design
-* JavaScript ES6+
-* DOM manipulation
-* Event handling
-* Fetch API
-* Client-side state handling
-* Search and filtering
-* Sorting
-* Data aggregation
-* Browser file handling
+- HTML5
+- CSS3
+- Responsive design
+- JavaScript ES6+
+- DOM manipulation
+- Event handling
+- Fetch API
+- Client-side state management
+- Search and filtering
+- Sorting
+- Data aggregation
+- Browser file handling
 
 ### Backend Development
 
-* Node.js
-* Express.js
-* REST API design
-* HTTP methods
-* HTTP status codes
-* JSON requests and responses
-* Server-side validation
-* Error handling
-* Static file serving
+- Node.js
+- Express.js
+- REST API development
+- HTTP methods and status codes
+- JSON requests and responses
+- Server-side validation
+- Error handling
+- Static file serving
 
 ### Data Management
 
-* lowdb
-* JSON file storage
-* CRUD operations
-* Unique constraints
-* Data validation
-* Import/export
+- lowdb
+- JSON-based storage
+- CRUD operations
+- Data validation
+- Import and export
 
-### Security
+### Security Fundamentals
 
-* Input validation
-* Data sanitization
-* Basic XSS protection
-* Understanding authentication limitations
+- Input validation
+- Input sanitization
+- Basic XSS prevention
+- Authentication and authorization limitations
 
 ### Development Practices
 
-* Git
-* GitHub
-* Project structure
-* README documentation
-* API testing
-* Manual testing
-* Environment configuration
+- Git
+- GitHub
+- Project structuring
+- API testing
+- Manual testing
+- Documentation
 
 ---
 
-# 🔄 CRUD Operations
+## 🔄 CRUD Operations
 
-The project demonstrates the four fundamental CRUD operations:
+The project demonstrates the four fundamental CRUD operations.
 
-```text
-CREATE
-   ↓
-POST /api/students
+| Operation | HTTP Method | Endpoint |
+|---|---|---|
+| Create | `POST` | `/api/students` |
+| Read | `GET` | `/api/students` |
+| Read by ID | `GET` | `/api/students/:id` |
+| Update | `PUT` | `/api/students/:id` |
+| Delete | `DELETE` | `/api/students/:id` |
 
-READ
-   ↓
-GET /api/students
-GET /api/students/:id
+CRUD represents:
 
-UPDATE
-   ↓
-PUT /api/students/:id
-
-DELETE
-   ↓
-DELETE /api/students/:id
-```
-
-This is one of the main concepts demonstrated by the project.
+- **Create** — Add new records.
+- **Read** — Retrieve records.
+- **Update** — Modify existing records.
+- **Delete** — Remove records.
 
 ---
 
-# 📚 What I Learned
+## 💡 What I Learned
 
-Through this project, I learned how a full-stack application works from end to end.
+Through this project, I gained a practical understanding of how a full-stack application works from end to end.
 
 ```text
 Frontend
-   ↓
-User interacts with UI
-   ↓
-JavaScript sends API request
-   ↓
-Express receives request
-   ↓
-Backend validates data
-   ↓
-lowdb stores/retrieves data
-   ↓
-Backend sends JSON response
-   ↓
-Frontend updates the UI
+   │
+   ▼
+User Interaction
+   │
+   ▼
+JavaScript
+   │
+   ▼
+Fetch API
+   │
+   ▼
+Express REST API
+   │
+   ▼
+Backend Validation
+   │
+   ▼
+lowdb
+   │
+   ▼
+JSON Data Storage
+   │
+   ▼
+API Response
+   │
+   ▼
+Frontend UI Update
 ```
 
-The project provided practical experience in connecting a frontend application with a backend REST API and persistent data storage.
+This project helped me understand how frontend applications communicate with backend services, how REST APIs handle requests, how data validation works, and how data can be stored and managed through a full-stack application.
 
 ---
 
-# 💼 Internship Context
+## 💼 Internship Project
 
 This project was developed as part of the:
 
 **Auspify Technologies Full Stack Development Internship Program**
 
-The project was completed as a practical full-stack development exercise to demonstrate:
+The project demonstrates practical implementation of:
 
-* Frontend development
-* Backend development
-* REST API development
-* CRUD operations
-* Data storage
-* Validation
-* Responsive UI
-* Git/GitHub workflow
-* Full-stack application architecture
+- Frontend development
+- Backend development
+- REST API development
+- CRUD operations
+- Data persistence
+- Backend validation
+- Responsive UI development
+- Git and GitHub workflow
+- Full-stack architecture
 
 ---
 
-# 👤 Author
+## 👤 Author
 
 **Samni Hasnath**
 
-GitHub:
-https://github.com/SamniHasnath
+- GitHub: [SamniHasnath](https://github.com/SamniHasnath)
 
 ---
 
-# 📄 License
+## 📄 License
 
 No license has been added to this repository yet.
 
-A license such as the **MIT License** can be added if the project is intended to be reused or distributed as open-source software.
+If this project is intended to be reused or distributed as an open-source project, an appropriate license such as the MIT License can be added.
 
 ---
 
-## ⭐ Project Summary
-
-**Student Management System** is a beginner-friendly full-stack CRUD application demonstrating how a browser frontend communicates with an Express REST API and stores data using lowdb.
-
-### Main technologies
-
-```text
-HTML
-CSS
-JavaScript
-      ↓
-   Express
-      ↓
-    Node.js
-      ↓
-    lowdb
-      ↓
-students.json
-```
-
-The project focuses on understanding the fundamentals of **full-stack web development, REST APIs, CRUD operations, validation, client-server communication and data persistence**.
+<p align="center">
+  <strong>Built to learn, practice and grow as a Full-Stack Developer 🚀</strong>
+</p>
